@@ -186,7 +186,7 @@ const FAQS = [
   },
   {
     q: 'Does CBL take a percentage of rides?',
-    a: "For CBL Private rides paid by card, a service fee of 6% of the fare plus $0.50 supports platform operations and covers card processing. It is shown before you book. 100% of the driver's fare goes to them. Paying from a Rider Wallet balance carries no service fee, and in-person payments carry none either. For third-party providers, CBL earns an affiliate commission paid by the network — never by the rider.",
+    a: "For CBL Private rides paid by card, a service fee of 6% of the fare plus $0.50 supports platform operations and covers card processing. It is shown before you book. 100% of the driver's fare goes to them. In-person payments carry no service fee. For third-party providers, CBL earns an affiliate commission paid by the network — never by the rider.",
   },
   {
     q: 'Do drivers work for CityBucketList?',
