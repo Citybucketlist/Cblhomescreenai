@@ -168,7 +168,7 @@ const AUDIENCES: Audience[] = [
 ];
 
 const PARTNERS = [
-  { name: 'CBL Private', sub: 'Service Fee · $0.01–$0.99', rev: '100%', revLbl: 'to driver' },
+  { name: 'CBL Private', sub: 'Service Fee · 6% + $0.50', rev: '100%', revLbl: 'to driver' },
   { name: 'Uber', sub: 'Affiliate · Coming Soon', rev: 'Soon', revLbl: '' },
   { name: 'Lyft', sub: 'Affiliate · Coming Soon', rev: 'Soon', revLbl: '' },
   { name: 'Waymo', sub: 'Affiliate · Coming Soon', rev: 'Soon', revLbl: '' },
@@ -186,7 +186,7 @@ const FAQS = [
   },
   {
     q: 'Does CBL take a percentage of rides?',
-    a: "For CBL Private rides paid by card, a small service fee (round-up to the nearest dollar, $0.01–$0.99) supports platform operations. 100% of the driver's fare goes to them. For third-party providers, CBL earns an affiliate commission paid by the network — never by the rider.",
+    a: "For CBL Private rides paid by card, a service fee of 6% of the fare plus $0.50 supports platform operations and covers card processing. It is shown before you book. 100% of the driver's fare goes to them. Paying from a Rider Wallet balance carries no service fee, and in-person payments carry none either. For third-party providers, CBL earns an affiliate commission paid by the network — never by the rider.",
   },
   {
     q: 'Do drivers work for CityBucketList?',

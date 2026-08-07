@@ -51,7 +51,7 @@ const faqData = [
   },
   {
     question: 'Does City Bucket List take a percentage of rides?',
-    answer: 'Yes. For card payments only, a small service fee (round-up to the nearest dollar, ranging from $0.01 to $0.99) is added to support platform operations. This fee is clearly displayed before booking. In-person payments do not include a service fee. 100% of your driver\'s fare goes directly to them — the service fee supports the platform, not the driver\'s earnings.',
+    answer: 'Yes. For card payments only, a service fee of 6% of the fare plus $0.50 is added, which supports platform operations and covers card processing costs. On a $20 fare that is $1.70. The fee is clearly displayed before booking. Paying from a Rider Wallet balance carries no service fee, and in-person payments do not either. 100% of your driver\'s fare goes directly to them — the service fee supports the platform, not the driver\'s earnings.',
   },
   {
     question: 'What kind of rides can Riders schedule?',
