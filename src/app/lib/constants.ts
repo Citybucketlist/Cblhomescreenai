@@ -5,12 +5,23 @@
 // behind the app (retention) and prevents reverse-tabnabbing.
 export const APP_URL = 'https://app.citybucketlist.com';
 
-// Direct driver-signup form in the app (Justin's `/driver/signup` route). Use this
-// for "Become a Driver" acquisition CTAs so prospects land on the signup form, not
-// the app's general home. (There's no single URL that shows the dashboard when
-// logged-in AND signup when logged-out — the protected dashboard sends logged-out
-// users to /driver/login, not signup — so acquisition CTAs point straight at signup.)
-export const DRIVER_SIGNUP_URL = `${APP_URL}/driver/signup`;
+// "Become a Driver" acquisition CTAs.
+//
+// This used to point at the app's `/driver/signup` route, which creates a driver record
+// and NO rider record. That contradicts how CBL actually works: everyone is a rider first
+// and becomes a driver in addition, never instead. Three drivers ended up unable to book a
+// ride as a passenger because the app did not consider them riders at all.
+//
+// `/rider/signup?intent=driver` is the same signup form riders use, and the app already
+// honours that parameter: it creates the rider record and then sends them straight into
+// the driver upgrade. Same destination for the prospect, one consistent account model
+// behind it, and one referral path instead of two.
+//
+// Deliberately no ref on these three CTAs, and none should be added without checking
+// first: the rider signup resolves referral codes through get_referrer_by_code, which
+// understands drivers and riders but NOT partner or concierge codes, and silently treats a
+// numeric code as a driver id.
+export const DRIVER_SIGNUP_URL = `${APP_URL}/rider/signup?intent=driver`;
 
 // Rider booking entry in the app (Justin's `/rider/login` route). Unlike the driver
 // side, this one URL does it all: it auto-redirects an already-logged-in rider
