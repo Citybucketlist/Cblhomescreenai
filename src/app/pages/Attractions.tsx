@@ -1,5 +1,6 @@
 import { useState, useEffect, createContext, useContext } from 'react';
 import { RIDER_BOOK_URL } from '../lib/constants';
+import { openAttributed } from '../lib/analytics';
 import { Link } from 'react-router';
 import { useVisitorLocation, type Coords, type VisitorLocationStatus } from '../lib/location';
 
@@ -965,7 +966,7 @@ function BucketGlyph({ value = 5, size = 14 }: { value?: number; size?: number }
 }
 
 function openBook() {
-  window.open(RIDER_BOOK_URL, '_blank', 'noopener,noreferrer');
+  openAttributed(RIDER_BOOK_URL);
 }
 function openDirections(a: Attraction) {
   window.open(gMaps(a), '_blank', 'noopener,noreferrer');

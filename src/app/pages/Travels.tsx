@@ -1,6 +1,7 @@
 import { useState } from 'react';
 import { Link } from 'react-router';
 import { RIDER_BOOK_URL } from '../lib/constants';
+import { openAttributed } from '../lib/analytics';
 import { kayakHotel, kayakHotelSearch } from '../lib/kayak';
 
 // Travel booking (search + Book Now) is gated OFF until a booking-partner contract
@@ -894,7 +895,7 @@ function FlightRow({ f }: { f: Flight }) {
       </div>
       <div className="actions">
         <button disabled title="Flight booking coming soon" style={{ opacity: 0.5, cursor: 'default' }}>Book Flight</button>
-        <button className="ride" onClick={() => window.open(RIDER_BOOK_URL, '_blank', 'noopener,noreferrer')}>
+        <button className="ride" onClick={() => openAttributed(RIDER_BOOK_URL)}>
           <RideGlyph size={12} color="#C99742" strokeWidth={14} />
           Ride to Airport
         </button>
@@ -922,7 +923,7 @@ function AirportRideBanner() {
           picking you up.
         </p>
       </div>
-      <button className="cta" onClick={() => window.open(RIDER_BOOK_URL, '_blank', 'noopener,noreferrer')}>Schedule Airport Ride →</button>
+      <button className="cta" onClick={() => openAttributed(RIDER_BOOK_URL)}>Schedule Airport Ride →</button>
     </div>
   );
 }
