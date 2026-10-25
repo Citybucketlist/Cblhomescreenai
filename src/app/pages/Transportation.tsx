@@ -2,6 +2,7 @@ import { useState } from 'react';
 import { useNavigate } from 'react-router';
 import { JoinModal } from '../components/JoinModal';
 import { RIDER_BOOK_URL, DRIVER_SIGNUP_URL } from '../lib/constants';
+import { openAttributed } from '../lib/analytics';
 
 /**
  * Transportation — ported from the CBL "New Website" handoff bundle
@@ -678,7 +679,7 @@ function Hero() {
           </p>
           <div style={{ display: 'flex', gap: 14, marginTop: 28, flexWrap: 'wrap' }}>
             <button
-              onClick={() => window.open(RIDER_BOOK_URL, '_blank', 'noopener,noreferrer')}
+              onClick={() => openAttributed(RIDER_BOOK_URL)}
               style={{
                 background: '#C99742',
                 color: '#000',
@@ -766,7 +767,7 @@ function Audiences() {
   const navigate = useNavigate();
   const ctaFor = (key: string) => {
     if (key === 'RIDERS') return () => setJoinOpen(true);
-    if (key === 'DRIVERS') return () => window.open(DRIVER_SIGNUP_URL, '_blank', 'noopener,noreferrer');
+    if (key === 'DRIVERS') return () => openAttributed(DRIVER_SIGNUP_URL);
     return () => navigate('/concierge#apply');
   };
   return (
@@ -840,7 +841,7 @@ function ProviderCard({
           className="pick-btn"
           onClick={(e) => {
             e.stopPropagation();
-            window.open(RIDER_BOOK_URL, '_blank', 'noopener,noreferrer');
+            openAttributed(RIDER_BOOK_URL);
           }}
         >
           Book This Ride <CarIconInline size={14} color="#000" />
@@ -1053,7 +1054,7 @@ function RideAggregator() {
               <button
                 className="audience-cta"
                 style={{ width: 'auto', padding: '14px 32px' }}
-                onClick={() => window.open(DRIVER_SIGNUP_URL, '_blank', 'noopener,noreferrer')}
+                onClick={() => openAttributed(DRIVER_SIGNUP_URL)}
               >
                 Start 30-Day Free Trial →
               </button>

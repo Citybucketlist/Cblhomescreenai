@@ -5,6 +5,7 @@ import driverImage from '../../assets/driver_at_wheel.jpg';
 import conciergeImage from '../../assets/concierge_professional.jpg';
 import driverFace from '../../assets/mock-driver-headshot.jpg'; // Unsplash (free/commercial license) — example driver headshot
 import { APP_URL, DRIVER_SIGNUP_URL } from '../lib/constants';
+import { withAttribution } from '../lib/attribution';
 import { Link } from 'react-router';
 
 // Little example of the member digital business card — a driver's shareable card.
@@ -383,7 +384,7 @@ function AudienceRow({ a }: { a: Audience }) {
           {a.primaryTo ? (
             <Link className="btn" to={a.primaryTo}>{a.primary}</Link>
           ) : a.primaryHref ? (
-            <a className="btn" href={a.primaryHref} target="_blank" rel="noopener noreferrer">{a.primary}</a>
+            <a className="btn" href={withAttribution(a.primaryHref)} target="_blank" rel="noopener noreferrer">{a.primary}</a>
           ) : (
             <button className="btn">{a.primary}</button>
           )}
